@@ -1,0 +1,26 @@
+.Table
+{
+    display: table;
+}
+
+.Row
+{
+    display: table-row;
+}
+
+.Cell
+{
+    display: table-cell;
+    width: 15px;
+    height: 15px;
+}
+
+.Cell.state0
+ {
+     background-color: black;
+ }
+
+.Cell.state1
+{
+    background-color: red;
+}

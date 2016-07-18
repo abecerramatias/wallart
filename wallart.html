@@ -1,0 +1,36 @@
+<head>
+    <title>wallart</title>
+</head>
+
+<body>
+<h1>Welcome to Wallart Beta</h1>
+{{> boardData}}
+{{> boardUI}}
+</body>
+
+<template name="boardData">
+    Board Name:<br>
+    {{#with board}}
+        <input type="text" id="boardName" value={{name}}><br>
+        X length:<br>
+        <input type="text" id="xLength" value={{xSize}}><br>
+        Y length:<br>
+        <input type="text" id="yLength" value={{ySize}}><br><br>
+    {{/with}}
+    <button class="createBoard" type="button" id="createNewBoard" >Create new board</button><br><br>
+</template>
+
+<template name="boardUI">
+    {{#each points}}
+    <div class="Table" style="cursor:default">
+        {{#each this.points}}
+                <div class="Cell {{color state}}" data-x="{{position.[0]}}" data-y="{{position.[1]}}" data-state="{{state}}" ></div>
+            {{#if lastCol}}
+                <div class="Row"></div>
+            {{/if}}
+        {{/each}}
+    </div>
+    {{/each}}
+</template>
+
+
